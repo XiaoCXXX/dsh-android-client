@@ -1,0 +1,16 @@
+# 依赖与构建产物
+.gradle/
+build/
+app/build/
+local.properties
+
+# 签名材料（绝不入库）
+keystore.jks
+keystore.properties
+*.jks
+*.keystore
+
+# 编辑器
+.idea/
+*.iml
+.DS_Store

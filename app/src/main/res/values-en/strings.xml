@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">DSH Client</string>
+    <string name="title_connected">DSH</string>
+    <string name="menu">More</string>
+    <string name="menu_reload">Reload</string>
+    <string name="menu_settings">Server settings</string>
+    <string name="menu_browser">Open in browser</string>
+    <string name="menu_about">About</string>
+
+    <string name="setup_title">Connect to DSH</string>
+    <string name="setup_hint">Start the DSH server on your computer with LAN access:\n\n  dsh --profile web --host 192.168.x.x --no-open\n\nThen paste the full address it prints (including the token) below.</string>
+    <string name="setup_url_hint">http://192.168.1.5:3080/?token=…</string>
+    <string name="setup_token_hint">token (leave empty if the address contains it)</string>
+    <string name="setup_connect">Connect</string>
+    <string name="setup_paste">Paste from clipboard</string>
+    <string name="setup_required">Please enter the server address</string>
+    <string name="setup_bad_url">That address could not be parsed</string>
+
+    <string name="error_title">Cannot reach the server</string>
+    <string name="error_unauthorized">Authentication failed (401). Check the token in the address.</string>
+    <string name="error_network">Network error: %1$s</string>
+    <string name="retry">Retry</string>
+    <string name="open_settings">Server settings</string>
+    <string name="download_started">Download started</string>
+    <string name="about_text">DSH Client for Android\n\nA mobile client for DeepSeek Harness: the UI is served by the DSH instance on your computer, and this app hosts the connection.\n\nDesktop: DSHSD Desktop Client</string>
+</resources>

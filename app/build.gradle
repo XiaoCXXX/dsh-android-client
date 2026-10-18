@@ -1,0 +1,56 @@
+plugins {
+    id 'com.android.application'
+}
+
+// 签名配置从环境变量或 local.properties 读取，仓库里不放密钥。
+// 缺省时 release 不签名，方便没有 keystore 的人直接构建 debug。
+def keystoreFile = System.getenv('DSH_KEYSTORE') ?: (project.hasProperty('dshKeystore') ? project.property('dshKeystore') : null)
+
+android {
+    namespace 'com.xiaocxxx.dshclient'
+    compileSdk 34
+
+    defaultConfig {
+        applicationId 'com.xiaocxxx.dshclient'
+        minSdk 26
+        targetSdk 34
+        versionCode 1
+        versionName '1.0.0'
+        // 中文为默认语言，英文在 values-en 里
+        resourceConfigurations += ['zh', 'en']
+    }
+
+    if (keystoreFile != null) {
+        signingConfigs {
+            release {
+                storeFile file(keystoreFile)
+                storePassword System.getenv('DSH_KEYSTORE_PASSWORD') ?: ''
+                keyAlias System.getenv('DSH_KEY_ALIAS') ?: 'dsh'
+                keyPassword System.getenv('DSH_KEY_PASSWORD') ?: (System.getenv('DSH_KEYSTORE_PASSWORD') ?: '')
+            }
+        }
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            shrinkResources false
+            if (keystoreFile != null) signingConfig signingConfigs.release
+        }
+        debug {
+            applicationIdSuffix '.debug'
+            versionNameSuffix '-debug'
+        }
+    }
+
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_17
+        targetCompatibility JavaVersion.VERSION_17
+    }
+
+    packagingOptions {
+        resources {
+            excludes += ['META-INF/*.kotlin_module']
+        }
+    }
+}

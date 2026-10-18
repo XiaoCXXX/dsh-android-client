@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">DSH 客户端</string>
+    <string name="title_connected">DSH</string>
+    <string name="menu">更多</string>
+    <string name="menu_reload">重新加载</string>
+    <string name="menu_settings">服务器设置</string>
+    <string name="menu_browser">在浏览器中打开</string>
+    <string name="menu_about">关于</string>
+
+    <string name="setup_title">连接到 DSH</string>
+    <string name="setup_hint">在电脑上启动 DSH 服务并允许局域网访问：\n\n  dsh --profile web --host 192.168.x.x --no-open\n\n然后把终端打印的完整地址（含 token）粘贴到下面。</string>
+    <string name="setup_url_hint">http://192.168.1.5:3080/?token=…</string>
+    <string name="setup_token_hint">token（地址里已包含时可留空）</string>
+    <string name="setup_connect">连接</string>
+    <string name="setup_paste">粘贴剪贴板</string>
+    <string name="setup_required">请填写服务器地址</string>
+    <string name="setup_bad_url">地址无法解析，请检查格式</string>
+
+    <string name="error_title">无法连接到服务器</string>
+    <string name="error_unauthorized">认证失败（401）。请确认地址里的 token 正确。</string>
+    <string name="error_network">网络错误：%1$s</string>
+    <string name="retry">重试</string>
+    <string name="open_settings">服务器设置</string>
+    <string name="download_started">已开始下载</string>
+    <string name="about_text">DSH 客户端 for Android\n\n这是 DeepSeek Harness 的移动端客户端：界面由你电脑上的 DSH 服务提供，本应用负责承载与连接。\n\n桌面端：DSHSD Desktop Client</string>
+</resources>
